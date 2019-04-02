@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    @model SumResultViewModel
+}
+
+
+<div class="row">
+    <h1>Add two numbers</h1>
+    <form asp-controller="Home" asp-action="add" method="post">
+        <span>First Number : </span>
+        <input id="Text1" type="number" name="firstNumber" /> <br /><br />
+        <span>Second Number : </span>
+        <input id="Text2" type="number" name="secondNumber" /> <br /><br />
+        <input id="SubmitBtn" type="submit" value="Add" />
+    </form>
+    @* ------- for showing sum and errors if any -----*@
+    @if (Model != null)
+    {
+        if (Model.IsSuccess)
+        {
+            <h2>Sum : @Model.Sum</h2>
+        }
+        else
+        {
+            <h2>Please correct following errors </h2>
+            <ul>
+                @foreach (var error in Model.ErrorMsgs)
+                {
+                    <li style="color:red">
+                        @error
+                    </li>
+                }
+            </ul>
+        }
+    }
+</div>
