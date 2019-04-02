@@ -16,7 +16,7 @@ namespace TestSumApplication.Controllers
         {
             if (ModelState.IsValid)
             {
-                long result = addVm.firstNumber + addVm.secondNumber;
+                double result = addVm.firstNumber + addVm.secondNumber;
                 return View("Index", new SumResultViewModel { IsSuccess = true, Sum = result });
             }
 

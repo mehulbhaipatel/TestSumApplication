@@ -2,6 +2,6 @@
 {
     public class SumResultViewModel : ResultViewModel
     {
-        public long Sum { get; set; }
+        public double Sum { get; set; }
     }
 }
